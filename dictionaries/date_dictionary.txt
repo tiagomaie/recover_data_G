@@ -1,0 +1,11 @@
+Calendrier_K_DS_:OBSERVATEUR.3
+Echantillonnage_cameleon_:Furcifer
+Transects_chemins_:Site_ID_trans_chemins,methode
+Distance_sampling_nocturne_:Dispersion,Angle
+Echantillonnage_eulemurs_:Initiales_fragment,BB,Eulemur
+Echantillonnage_propi_:Initiales_fragment,BB,Propi
+Caracterisation_env_foret_:ZE,BU
+Recap_pt_GPS_:Sec,SymbolColor
+Relevé_traps_microcebe_:PT50,OB
+Entretiens_:entretient
+TEST_:Initiales_fragment,BB
