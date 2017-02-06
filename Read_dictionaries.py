@@ -35,15 +35,18 @@ for filename in os.listdir("./data/"):
     tentative_key = set()
     wb = xlrd.open_workbook(filename="./data/"+filename)
     for ws_idx in range(0, wb.nsheets):  # for each worksheet in the workbook
+        print(ws_idx)
         ws = wb.sheet_by_index(ws_idx)
-        for row_idx in range(0,3):  # for the x to y rows in the worksheet
-            ws_row = ws.row(row_idx)
-            for cell in ws_row:  # for each cell in the rows
-                #print(cell.value)
-                for value in my_dict.values():  # for each list of values in my dictionary
-                    if cell.value in value:  # if the value of a cell corresponds to a value on my dictionary
+        row_num = 0
+        for ws_row in ws.get_rows():  # for the x to y rows in the worksheet
+            if row_num < 2:
+                for cell in ws_row:  # for each cell in the rows
+                    #print(cell.value)
+                    for value in my_dict.values():  # for each list of values in my dictionary
+                        if cell.value in value:  # if the value of a cell corresponds to a value on my dictionary
                         #print(cell.value)
-                        tentative_key.add(cell.value)  # put this value in a set
+                            tentative_key.add(cell.value)  # put this value in a set
+            row_num+=1
     if list(tentative_key) in my_dict.values():  # if tentative_key is in the dictionary
         print(list(tentative_key))
         print(my_dict.keys()[my_dict.values().index(list(tentative_key))])
